@@ -2249,7 +2249,7 @@ var CakePrice = function (_a) {
     var cakePriceUsd = _a.cakePriceUsd, _b = _a.color, color = _b === void 0 ? "textSubtle" : _b;
     return cakePriceUsd ? (React__default.createElement(PriceLink, { href: "", target: "_blank" },
         React__default.createElement("img", { src: "/images/token-icon.png", alt: "token icon", width: "24px" }),
-        React__default.createElement(Text, { ml: "8px", color: color, bold: true }, "$" + cakePriceUsd.toFixed(3)))) : (React__default.createElement(Skeleton, { width: 80, height: 24 }));
+        React__default.createElement(Text, { ml: "8px", color: color, bold: true }, "$" + cakePriceUsd.toFixed(7)))) : (React__default.createElement(Skeleton, { width: 80, height: 24 }));
 };
 var CakePrice$1 = React__default.memo(CakePrice);
 var templateObject_1$P;
