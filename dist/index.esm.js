@@ -5256,12 +5256,6 @@ var connectorLocalStorageKey = "connectorIdv2";
 var walletLocalStorageKey = "wallet";
 
 var WalletButton = styled(Button).attrs({ width: "100%", variant: "text", py: "16px" })(templateObject_1$2 || (templateObject_1$2 = __makeTemplateObject(["\n  align-items: center;\n  display: flex;\n  flex-direction: column;\n  height: auto;\n  justify-content: center;\n  margin-left: auto;\n  margin-right: auto;\n"], ["\n  align-items: center;\n  display: flex;\n  flex-direction: column;\n  height: auto;\n  justify-content: center;\n  margin-left: auto;\n  margin-right: auto;\n"])));
-var MoreWalletCard = function (_a) {
-    var t = _a.t, props = __rest(_a, ["t"]);
-    return (React__default.createElement(WalletButton, __assign({ variant: "tertiary" }, props),
-        React__default.createElement(Icon$15, { width: "40px", mb: "8px", color: "textSubtle" }),
-        React__default.createElement(Text, { fontSize: "14px" }, t("More"))));
-};
 var WalletCard = function (_a) {
     var login = _a.login, walletConfig = _a.walletConfig, onDismiss = _a.onDismiss;
     var title = walletConfig.title, Icon = walletConfig.icon;
@@ -5309,7 +5303,7 @@ var getPreferredConfig = function (walletConfig) {
 };
 var ConnectModal = function (_a) {
     var login = _a.login, _b = _a.onDismiss, onDismiss = _b === void 0 ? function () { return null; } : _b, _c = _a.displayCount, displayCount = _c === void 0 ? 3 : _c, t = _a.t;
-    var _d = useState(false), showMore = _d[0], setShowMore = _d[1];
+    var _d = useState(false), showMore = _d[0]; _d[1];
     var theme = useTheme();
     var sortedConfig = getPreferredConfig(connectors);
     var displayListConfig = showMore ? sortedConfig : sortedConfig.slice(0, displayCount);
@@ -5320,13 +5314,8 @@ var ConnectModal = function (_a) {
             React__default.createElement(ModalCloseButton, { onDismiss: onDismiss })),
         React__default.createElement(ModalBody, { width: ["320px", null, "340px"] },
             React__default.createElement(WalletWrapper, { py: "24px", maxHeight: "453px", overflowY: "auto" },
-                React__default.createElement(Grid, { gridTemplateColumns: "1fr 1fr" },
-                    displayListConfig.map(function (wallet) { return (React__default.createElement(Box, { key: wallet.title },
-                        React__default.createElement(WalletCard, { walletConfig: wallet, login: login, onDismiss: onDismiss }))); }),
-                    !showMore && React__default.createElement(MoreWalletCard, { t: t, onClick: function () { return setShowMore(true); } }))),
-            React__default.createElement(Box, { p: "24px" },
-                React__default.createElement(Text, { textAlign: "center", color: "textSubtle", as: "p", mb: "16px" }, t("Haven’t got a crypto wallet yet?")),
-                React__default.createElement(Button, __assign({ as: "a", href: "https://docs.pancakeswap.finance/get-started/connection-guide", variant: "subtle", width: "100%" }, getExternalLinkProps()), t("Learn How to Connect"))))));
+                React__default.createElement(Grid, { gridTemplateColumns: "1fr 1fr" }, displayListConfig.map(function (wallet) { return (React__default.createElement(Box, { key: wallet.title },
+                    React__default.createElement(WalletCard, { walletConfig: wallet, login: login, onDismiss: onDismiss }))); }))))));
 };
 var templateObject_1$1;
 
